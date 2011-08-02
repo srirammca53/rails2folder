@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Empname:</b>
+  <%= @register.empname %>
+</p>
+
+<p>
+  <b>Empage:</b>
+  <%= @register.empage %>
+</p>
+
+<p>
+  <b>Empsalary:</b>
+  <%= @register.empsalary %>
+</p>
+
+<p>
+  <b>Empdepartment:</b>
+  <%= @register.empdepartment %>
+</p>
+ 
+<h2>Comments</h2>
+<%= render :partial => "updates/update",
+           :collection => @register.updates %>
+<h2>Add a update:</h2>
+<%= render "updates/form" %>
+<%= link_to 'Edit', edit_register_path(@register) %> |
+<%= link_to 'Back', registers_path %>

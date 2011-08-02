@@ -1,0 +1,34 @@
+<%= form_for(@update) do |f| %>
+ <% if @update.errors.any? %>
+    <div id="error_explanation">
+ <h2><%= pluralize(@update.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @update.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+<% end %>
+<% end %>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+     <%=f.label :present %><br /> 	
+    <%=  f.check_box(:present,{:multipart => true }, "present",nil)
+ %> 
+ 
+  </div>
+  <div class="field">
+    <%=f.label :late %><br /> 	
+    <%= f.check_box(:late,{:multipart => true }, "late",nil) %> 
+ 
+  </div>
+  <div class="field">
+    <%=f.label :absent %><br /> 	
+    <%= f.check_box(:absent,{:multipart => true }, "absent",nil) %> 
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit "submit" %>
+  </div>
+<% end %>
